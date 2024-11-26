@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><link rel="stylesheet" href="derivada.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DERIVADAS</title>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Sour Gummy", sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color:#174D4D;
+        }
+        pre {
+            background-color: #40c4f8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .example {
+            margin-top: 20px;
+            background-color: #d4dfe7;
+            padding: 10px;
+            border-left: 5px solid #ffc3c3;
+        }
+
+        /* Estilo para el bloque del procedimiento */
+        .procedimiento-body {
+            display: none; /* El contenido estará oculto al principio */
+            margin-top: 10px;
+            background-color:#f5f5dc;
+            padding: 10px;
+            border: 1px solid #0c6060;
+            border-radius: 5px;
+        }
+
+        /* Estilo para el encabezado clickeable */
+        .procedimiento-header {
+            background-color: #5887de;
+            color: black;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .procedimiento-header:hover {
+            background-color: #9fb8e7;
+            color: white;
+        }
+        body {
+            font-family: "Sour Gummy", sans-serif;
+            margin: 20px;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:  #b4ceba;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a, .dropbtn {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover, .dropdown:hover .dropbtn {
+          background-color: rgb(153, 202, 199);
+        }
+        
+        li.dropdown {
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <ul>
+          <li><a href="MENUUU_JEIA.html">REGRESAR</a></li>
+          <li><a href="CONTACTO_JEIA.html">CONTACTO</a></li>
+          <li><a href="EJERCICIOS_DERIVALIMITES.html">EJERCICIOS</a></li>
+          </li>
+        </ul>
+      
+        </body>
+      <body>
+          <div id="background-wrap">
+              <div class="x1">
+                  <div class="cloud"></div>
+              </div>
+          
+              <div class="x2">
+                  <div class="cloud"></div>
+              </div>
+          
+              <div class="x3">
+                  <div class="cloud"></div>
+              </div>
+          
+              <div class="x4">
+                  <div class="cloud"></div>
+              </div>
+          
+              <div class="x5">
+                  <div class="cloud"></div>
+              </div>
+          </div>
+    <h1>Formulas fundamentales de derivación </h1>
+    <div class="seccion">
+        <h2>1. Derivada de una constante es cero.</h2>
+        <p>$$ \frac{d}{dx}(c) = 0 $$</p>
+        <p>La derivada de una constante siempre es cero. Esto sucede porque una constante no cambia, por lo tanto, su tasa de cambio respecto a cualquier variable es cero.</p>
+
+        <div class="example">
+            <b>Ejemplo:</b><br><b>y = 7</b><br><b>y' = 0</b>
+        </div>
+
+        <div class="procedimiento">
+            <div class="procedimiento-header" onclick="toggleProcedimiento('procedimiento1')">Ver Procedimiento</div>
+            <div class="procedimiento-body" id="procedimiento1">
+                <p>Tenemos la función constante:</p>
+                <p><b>y = 7</b></p>
+
+                <p>1. Sabemos que la derivada de una constante es igual a 0. Esto se debe a que una constante no cambia, su tasa de cambio con respecto a la variable independiente \( x \) es cero.</p>
+
+                <p>2. Aplicando la regla de derivación para una constante:</p>
+                <p><b>\( \frac{d}{dx}(7) = 0 \)</b></p>
+
+                <p>3. Entonces, la derivada de \( y = 7 \) es:</p>
+                <p><b>y' = 0</b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Derivada de una variable con respecto a sí misma -->
+    <div class="seccion">
+        <h2>2. Derivada de una variable con respecto a sí misma es la unidad.</h2>
+        <p>$$ \frac{d(x)}{dx} = 1 $$</p>
+        <p>La derivada de una variable respecto a sí misma siempre es igual a 1. Esto se debe a que el cambio de una variable respecto a sí misma es siempre constante, con una tasa de cambio igual a 1.</p>
+
+        <div class="example">
+            <b>Ejemplo:</b><br><b>y = x</b><br><b>y' = 1</b>
+        </div>
+
+        <div class="procedimiento">
+            <div class="procedimiento-header" onclick="toggleProcedimiento('procedimiento2')">Ver Procedimiento</div>
+            <div class="procedimiento-body" id="procedimiento2">
+                <p>Tenemos la función:</p>
+                <p><b>y = x</b></p>
+
+                <p>1. Sabemos que la derivada de \( x \) con respecto a \( x \) es igual a 1.</p>
+
+                <p>2. Aplicando la regla de derivación:</p>
+                <p><b>\( \frac{d}{dx}(x) = 1 \)</b></p>
+
+                <p>3. Entonces, la derivada de \( y = x \) es:</p>
+                <p><b>y' = 1</b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Derivada de una suma algebraica -->
+    <div class="seccion">
+        <h2>3. Derivada de la suma algebraica de un número finito n de funciones, es igual a la suma algebraica de las derivadas de las funciones.</h2>
+        <p>Esto se expresa como:</p>
+        <p>$$ \frac{d}{dx} \left( u + v - w \right) = \frac{du}{dx}  + \frac{dv}{dx}  - \frac{dw}{dx} $$</p>
+
+        <div class="example">
+            <b>Ejemplo:</b><br>
+            \( y = -\frac{5}{4} + 3x - 6 \)
+        </div>
+
+        <div class="procedimiento">
+            <div class="procedimiento-header" onclick="toggleProcedimiento('procedimiento3')">Ver Procedimiento</div>
+            <div class="procedimiento-body" id="procedimiento3">
+                <p>Tenemos la función:</p>
+                <p><b>\( y = -\frac{5}{4} + 3x - 6 \)</b></p>
+
+                <p>1. Descomponemos la función en tres términos:</p>
+                <ul>
+                    <li>\( -\frac{5}{4} \) (constante)</li>
+                    <li>\( 3x \)</li>
+                    <li>\( -6 \) (constante)</li>
+                </ul>
+
+                <p>2. Aplicamos la regla de derivación:</p>
+                <ul>
+                    <li>La derivada de \( -\frac{5}{4} \) es \( 0 \).</li>
+                    <li>La derivada de \( 3x \) es \( 3 \).</li>
+                    <li>La derivada de \( -6 \) es \( 0 \).</li>
+                </ul>
+
+                <p>3. Sumamos las derivadas:</p>
+                <p><b>\( y' = 0 + 3 + 0 \)</b></p>
+
+                <p>4. Por lo tanto, la derivada de \( y = -\frac{5}{4} + 3x - 6 \) es:</p>
+                <p><b>\( y' = 3 \)</b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Derivada del producto de una constante por una funcion -->
+    <div class="seccion">
+        <h2>4. Derivada del producto de una constante por una función es igual al producto de la constante por la derivada de la función.</h2>
+        <p>$$ \frac{d}{dx} \left( c \cdot v \right) = c \cdot \frac{dv}{dx} $$</p>
+
+        <div class="example">
+            <b>Ejemplo:</b><br>
+            \( y = 5x^{-7} \)
+        </div>
+
+        <div class="procedimiento">
+            <div class="procedimiento-header" onclick="toggleProcedimiento('procedimiento4')">Ver Procedimiento</div>
+            <div class="procedimiento-body" id="procedimiento4">
+                <p>Tenemos la función:</p>
+                <p><b>y = 5x<sup>-7</sup></b></p>
+
+                <p>1. Aplicamos la regla de la potencia, que nos dice que si tenemos una función de la forma \( ax^n \), su derivada es \( a \cdot n \cdot x^{n-1} \).</p>
+
+                <p>2. Entonces, aplicamos esta regla a \( 5x^{-7} \):</p>
+                <p><b>\(\frac{d}{dx}(5x^{-7}) = 5 \cdot (-7) \cdot x^{-7-1}\)</b></p>
+
+                <p>3. Simplificamos:</p>
+                <p><b>\(\frac{d}{dx}(5x^{-7}) = -35x^{-8}\)</b></p>
+
+                <p>Por lo tanto, la derivada de \( y = 5x^{-7} \) es:</p>
+                <p><b>y' = -35x<sup>-8</sup></b></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar y ocultar el procedimiento de derivación
+        function toggleProcedimiento(id) {
+            var procedimientoBody = document.getElementById(id);
+
+            // Verificamos si el bloque está visible o no y cambiamos el estado
+            if (procedimientoBody.style.display === "none" || procedimientoBody.style.display === "") {
+                procedimientoBody.style.display = "block";  // Mostrar el procedimiento
+            } else {
+                procedimientoBody.style.display = "none";  // Ocultar el procedimiento
+            }
+        }
+    </script>
+</body>
+</html

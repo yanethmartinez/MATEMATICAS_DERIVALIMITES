@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta</title>
+    
+    <link rel="stylesheet" href="limites.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      
+       body {
+    font-family: "Sour Gummy", sans-serif;
+    background-color: #c8c3cc46; /* Fondo gris claro */
+    color: #333333; /* Texto en gris oscuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que todo el contenido esté centrado */
+    flex-direction: column;
+    overflow: auto; /* Permite el desplazamiento si el contenido excede la altura */
+}
+
+#spin {
+    background-color: #5887de; /* Naranja coral */
+    color: #FFFFFF; /* Blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#spin:hover {
+    background-color: #8aa7dd; /* Rojo oscuro coral */
+}
+
+canvas {
+    margin: 20px auto;
+    display: block;
+    background-color: #FFFFFF; /* Fondo blanco */
+    border: 2px solid #5A9BD5; /* Azul vibrante */
+    border-radius: 10px;
+}
+
+#selectedText {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+#descriptionBox {
+    margin-top: 20px;
+    background-color: #3f6cbe; /* Azul pastel claro */
+    padding: 15px;
+    border: 1px solid #92bf9c; /* Azul vibrante */
+    border-radius: 8px;
+    display: none;
+    color: #333333; /* Texto gris oscuro */
+    max-width: 400px; /* Limitar el ancho del contenedor */
+    width: 100%;
+    text-align: center; /* Centrar el texto dentro de la caja */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000; /* Azul vibrante */
+}
+
+#descriptionInput {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #D3D3D3; /* Gris claro */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF; /* Blanco */
+    color: #333333; /* Texto gris oscuro */
+}
+
+#checkDescriptionButton {
+    background-color: #183b7c; /* Verde éxito */
+    color: #FFFFFF; /* Blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#checkDescriptionButton:hover {
+    background-color: #86a7e4; /* Verde más oscuro */
+}
+
+#feedback {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#correctAnswerBox {
+    margin-top: 10px;
+    color: #5A9BD5; /* Azul vibrante */
+}
+body {
+            font-family: "Sour Gummy", sans-serif;
+            margin: 20px;
+        }
+
+        ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #b4ceba;
+      width: 100%; /* Asegura que la barra ocupe todo el ancho */
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a, .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: rgb(153, 202, 199);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <ul>
+      <li><a href="MENUUU_JEIA.html">REGRESAR</a></li>
+      <li><a href="CONTACTO_JEIA.html">CONTACTO</a></li>
+      <li><a href="EJERCICIOS_DERIVALIMITES.html">ATRAS</a></li>
+  </ul>
+    
+    <input type="button" value="GIRA LA RULETA" id="spin" />
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <div id="selectedText"></div>
+    <div id="descriptionBox">
+        <label for="descriptionInput">Nota: Recuerda que la descripción debe estar correctamente escrita.<br>Escribe una descripción:</label>
+        <input type="text" id="descriptionInput" placeholder="Escribe tu respuesta aquí..." />
+        <button id="checkDescriptionButton">Comprobar</button>
+        <p id="feedback"></p>
+        <div id="correctAnswerBox" style="display: none;">
+            <p>La respuesta correcta es: <span id="correctAnswer"></span></p>
+        </div>
+    </div>
+    <script>
+        var options = [
+            "d/dx (c) = 0", 
+            "d(x)/dx = 1", 
+            "d/dx (u + v - w) = du/dx + dv/dx - dw/dx", 
+            "d/dx (c * v) = c * dv/dx"
+        ];
+        
+        var descriptions = {
+            "d/dx (c) = 0": "La derivada de una constante es cero",
+            "d(x)/dx = 1": "La derivada de una variable con respecto a si misma es la unidad",
+            "d/dx (u + v - w) = du/dx + dv/dx - dw/dx": "La derivada de la suma algebraica de un número finito n de funciones, es igual a la suma algebraica de las derivadas de las funciones",
+            "d/dx (c * v) = c * dv/dx": "La derivada del producto de una constante por una función es igual al producto de la constante por la derivada de la función"
+        };
+
+        var startAngle = 0;
+        var arc = Math.PI / (options.length / 2);
+        var spinTimeout = null;
+        var spinArcStart = 10;
+        var spinTime = 0;
+        var spinTimeTotal = 0;
+        var ctx;
+
+        document.getElementById("spin").addEventListener("click", spin);
+
+        function byte2Hex(n) {
+          var nybHexString = "0123456789ABCDEF";
+          return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+        }
+
+        function RGB2Color(r,g,b) {
+            return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+        }
+
+        function getColor(item, maxitem) {
+          var phase = 0;
+          var center = 128;
+          var width = 127;
+          var frequency = Math.PI*2/maxitem;
+          
+          red   = Math.sin(frequency*item+2+phase) * width + center;
+          green = Math.sin(frequency*item+0+phase) * width + center;
+          blue  = Math.sin(frequency*item+4+phase) * width + center;
+          
+          return RGB2Color(red,green,blue);
+        }
+
+        function drawRouletteWheel() {
+          var canvas = document.getElementById("canvas");
+          if (canvas.getContext) {
+            var outsideRadius = 200;
+            var textRadius = 160;
+            var insideRadius = 125;
+        
+            ctx = canvas.getContext("2d");
+            ctx.clearRect(0,0,500,500);
+        
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 2;
+        
+            ctx.font = 'bold 12px Helvetica, Arial';
+        
+            for(var i = 0; i < options.length; i++) {
+              var angle = startAngle + i * arc;
+              ctx.fillStyle = getColor(i, options.length);
+        
+              ctx.beginPath();
+              ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
+              ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
+              ctx.stroke();
+              ctx.fill();
+        
+              ctx.save();
+              ctx.fillStyle = "black";
+              ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius, 
+                            250 + Math.sin(angle + arc / 2) * textRadius);
+              ctx.rotate(angle + arc / 2 + Math.PI / 2);
+              var text = options[i];
+              ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+              ctx.restore();
+            } 
+        
+            ctx.fillStyle = "black";
+            ctx.beginPath();
+            ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
+            ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
+            ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
+            ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
+            ctx.lineTo(250, 250 - (outsideRadius - 13));
+            ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
+            ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
+            ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+            ctx.fill();
+          }
+        }
+
+        function spin() {
+          spinAngleStart = Math.random() * 10 + 10;
+          spinTime = 0;
+          spinTimeTotal = Math.random() * 3 + 4 * 1000;
+          rotateWheel();
+        }
+
+        function rotateWheel() {
+          spinTime += 30;
+          if (spinTime >= spinTimeTotal) {
+            stopRotateWheel();
+            return;
+          }
+          var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+          startAngle += (spinAngle * Math.PI / 180);
+          drawRouletteWheel();
+          spinTimeout = setTimeout(rotateWheel, 30);
+        }
+
+        function stopRotateWheel() {
+          clearTimeout(spinTimeout);
+          var degrees = startAngle * 180 / Math.PI + 90;
+          var arcd = arc * 180 / Math.PI;
+          var index = Math.floor((360 - degrees % 360) / arcd);
+          var text = options[index];
+          
+          // Muestra el texto debajo de la ruleta
+          document.getElementById("selectedText").innerText = text;
+          
+          document.getElementById('descriptionBox').style.display = 'block';
+          document.getElementById('checkDescriptionButton').onclick = function() {
+            checkDescription(text);
+          };
+        }
+
+        function checkDescription(selectedItem) {
+          var userDescription = document.getElementById('descriptionInput').value;
+          var correctDescription = descriptions[selectedItem];
+          
+          var feedback = document.getElementById('feedback');
+          var correctAnswerBox = document.getElementById('correctAnswerBox');
+          var correctAnswer = document.getElementById('correctAnswer');
+          
+          if (userDescription.toLowerCase() === correctDescription.toLowerCase()) {
+            feedback.innerText = "La descripción es correcta.";
+            feedback.style.color = "green";
+            correctAnswerBox.style.display = 'none';
+          } else {
+            feedback.innerText = "La descripción no es correcta.";
+            feedback.style.color = "red";
+            correctAnswerBox.style.display = 'block';
+            correctAnswer.innerText = correctDescription;
+          }
+        }
+
+        function easeOut(t, b, c, d) {
+          var ts = (t /= d) * t;
+          var tc = ts * t;
+          return b + c * (tc + -3 * ts + 3 * t);
+        }
+
+        drawRouletteWheel();
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+body {
+    font-family: "Sour Gummy", sans-serif;
+    background-color: #c8c3cc; /* Fondo lila claro */
+    color: #4B2E1A; /* Texto marrón oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddeedd; /* Verde claro */
+    padding: 15px 20px;
+}
+
+header h1 {
+    color: #4040a1; /* Azul oscuro */
+    margin: 0;
+    font-size: 24px;
+}
+
+header button {
+    padding: 10px 20px;
+    background-color: #4040a1; /* Azul oscuro */
+    color: #ddeedd; /* Verde claro */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #d4ddd6; /* Gris claro */
+}
+
+h1 {
+    color: #6B4226; /* Marrón oscuro */
+    text-align: center;
+    padding: 20px;
+    background-color: #ddeedd; /* Verde claro */
+    margin: 0;
+}
+
+h2 {
+    color: #4040a1; /* Azul oscuro */
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #8A2BE2; /* Morado */
+    color: #F5E6D8; /* Crema claro */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7A1D8D; /* Morado más oscuro */
+}
+
+.seccion {
+    background-color: #e4ddd6; /* Beige claro */
+    border: 1px solid #e4e3cd; /* Borde beige más claro */
+    padding: 15px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+pre, code {
+    background-color: #d4ddd6; /* Gris claro */
+    color: #4B2E1A; /* Marrón oscuro */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.si, .alao {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.alao {
+    margin-left: 5px;
+}
+
+.sus, .fac {
+    text-decoration: none;
+    color: #4B2E1A; /* Marrón oscuro */
+}
+
+.sus:hover, .fac:hover {
+    text-decoration: underline;
+    color: #e74c3c; /* Rojo vibrante */
+}
+
+.resultado {
+    font-weight: bold;
+    color: #e74c3c; /* Rojo vibrante */
+}
+
+.example {
+    background-color: #d4ddd6; /* Gris claro */
+    border-left: 5px solid #4040a1; /* Azul oscuro */
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.seccion1 {
+    background-color: #a8f2ff; /* Azul pastel */
+    border: 1px solid #4040a1; /* Azul oscuro */
+    padding: 15px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.lista {
+    list-style: square;
+}

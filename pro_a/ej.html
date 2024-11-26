@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Adivina el Límite</title>
+  
+  <!-- Estilos CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #game-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .question {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .option-btn {
+      padding: 10px;
+      font-size: 1.1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .option-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .feedback {
+      font-size: 1.2em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .score {
+      font-size: 1.3em;
+      margin-top: 20px;
+    }
+
+    #restart-button {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #e67e22;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      cursor: pointer;
+    }
+
+    #restart-button:hover {
+      background-color: #d35400;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Juego de Adivina el Límite</h1>
+
+  <div id="game-container">
+    <div id="question-container" class="question">Cargando pregunta...</div>
+
+    <div id="options-container" class="options">
+      <button class="option-btn" onclick="checkAnswer(0)">Cargando opción...</button>
+      <button class="option-btn" onclick="checkAnswer(1)">Cargando opción...</button>
+      <button class="option-btn" onclick="checkAnswer(2)">Cargando opción...</button>
+      <button class="option-btn" onclick="checkAnswer(3)">Cargando opción...</button>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+    <div class="score" id="score">Puntaje: 0</div>
+
+    <button id="restart-button" onclick="startGame()">Volver a jugar</button>
+  </div>
+
+  <script>
+    let score = 0;
+    let currentQuestionIndex = 0;
+
+    // Definimos las preguntas y respuestas
+    const questions = [
+      {
+        question: "¿Límite de \( \frac{1}{x} \) cuando \( x \to \infty \)?",
+        options: ["0", "1", "∞", "No existe"],
+        correctAnswer: 0
+      },
+      {
+        question: "¿Límite de \( \lim_{x \to 0} \frac{\sin(x)}{x} \)?",
+        options: ["0", "1", "∞", "No existe"],
+        correctAnswer: 1
+      },
+      {
+        question: "¿Límite de \( \lim_{x \to 1} \frac{x^2 - 1}{x - 1} \)?",
+        options: ["1", "2", "0", "∞"],
+        correctAnswer: 1
+      },
+      {
+        question: "¿Límite de \( \frac{x^2 - 4}{x - 2} \) cuando \( x \to 2 \)?",
+        options: ["0", "2", "∞", "4"],
+        correctAnswer: 2
+      },
+      {
+        question: "¿Límite de \( \lim_{x \to \infty} \frac{2x^2 + 3}{x^2 - 5} \)?",
+        options: ["2", "1", "∞", "0"],
+        correctAnswer: 0
+      }
+    ];
+
+    function startGame() {
+      score = 0;
+      currentQuestionIndex = 0;
+      document.getElementById('score').textContent = `Puntaje: ${score}`;
+      document.getElementById('restart-button').style.display = "none";
+      document.getElementById('feedback').textContent = "";
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const question = questions[currentQuestionIndex];
+      document.getElementById('question-container').textContent = question.question;
+      const options = document.querySelectorAll('.option-btn');
+      options.forEach((btn, index) => {
+        btn.textContent = question.options[index];
+      });
+    }
+
+    function checkAnswer(selectedOption) {
+      const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+      if (selectedOption === correctAnswer) {
+        score++;
+        document.getElementById('score').textContent = `Puntaje: ${score}`;
+        document.getElementById('feedback').textContent = "¡Correcto!";
+        document.getElementById('feedback').style.color = "green";
+      } else {
+        document.getElementById('feedback').textContent = "¡Incorrecto! La respuesta correcta es: " + questions[currentQuestionIndex].options[correctAnswer];
+        document.getElementById('feedback').style.color = "red";
+      }
+
+      // Avanzar a la siguiente pregunta
+      currentQuestionIndex++;
+
+      // Si hay más preguntas, mostrar la siguiente
+      if (currentQuestionIndex < questions.length) {
+        setTimeout(showQuestion, 1500); // Esperar 1.5 segundos antes de mostrar la siguiente pregunta
+      } else {
+        endGame();
+      }
+    }
+
+    function endGame() {
+      document.getElementById('question-container').textContent = "¡Juego Terminado!";
+      document.getElementById('options-container').style.display = "none";
+      document.getElementById('feedback').textContent = `Tu puntaje final es: ${score} de ${questions.length}`;
+      document.getElementById('restart-button').style.display = "block";
+    }
+
+    // Iniciar juego al cargar la página
+    window.onload = startGame;
+  </script>
+<script ></script>
+</body>
+</html>

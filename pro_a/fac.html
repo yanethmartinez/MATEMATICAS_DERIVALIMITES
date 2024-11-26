@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorización para Calcular un Límite</title>
+  <link rel="stylesheet" href="limites.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <ul class="si">
+        <li><button onclick="window.location.href='Limites.html'">Regresar</button></li>
+        <li><h1>Factorización para Calcular un Límite</h1></li>
+    </ul>
+    </header>
+
+  <div class="seccion"><p>La <strong>factorización</strong> es una técnica importante para calcular límites, especialmente cuando nos encontramos con <strong>formas indeterminadas</strong> como \( \frac{0}{0} \), que suelen ocurrir en funciones racionales. Esta técnica consiste en <strong>factorizar el numerador o el denominador</strong> (o ambos) de la expresión de la función, y luego simplificar la expresión para eliminar la indeterminación, permitiendo calcular el límite de manera más fácil.</p></div>
+
+  <div class="seccion"><h2>Pasos para usar la factorización en el cálculo de un límite:</h2>
+  <ul>
+    <li><strong>Identificar el límite:</strong> Se te da una función racional y un valor al cual ( x ) tiende, es decir, un límite <code>lim<sub>x→c</sub> f(x)</code>.</li>
+    <li><strong>Sustituir el valor de ( x ):</strong> Intentamos sustituir directamente el valor ( x = c ) en la expresión de la función.
+      <ul>
+        <li>Si obtenemos una forma indeterminada como <code>0/0</code>, entonces necesitamos <strong>factorizar</strong>.</li>
+      </ul>
+    </li>
+    <li><strong>Factorizar la expresión:</strong> Factorizamos el numerador y/o el denominador para intentar simplificar la expresión.</li>
+    <li><strong>Cancelar factores comunes:</strong> Si la factorización da como resultado factores comunes en el numerador y el denominador, los podemos <strong>cancelar</strong> (siempre que el valor ( x = c ) no haga que esos factores sean 0).</li>
+    <li><strong>Reemplazar el valor de ( x ) en la nueva expresión simplificada:</strong> Ahora, con la expresión simplificada, sustituimos el valor de ( x = c ) nuevamente para obtener el límite.</li>
+  </ul> </div>
+
+  <h2>Ejemplo 1: Límite con una función racional</h2>
+
+  <div class="seccion">
+    <p>Vamos a calcular el siguiente límite:</p>
+    <pre>lim<sub>x→2</sub> (x² - 4) / (x - 2)</pre>
+ 
+
+  <div class="seccion"><h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = (x² - 4) / (x - 2)</code>, y queremos calcular el límite cuando ( x ) tiende a 2.</li>
+    <li><strong>Sustituir directamente el valor ( x = 2 ):</strong></li>
+  </ul>
+
+  <pre>f(2) = (2² - 4) / (2 - 2) = (4 - 4) / 0 = 0 / 0</pre>
+
+  <p>Esto da una <strong>forma indeterminada</strong> \( \frac{0}{0} \), por lo que necesitamos factorizar.</p>
+
+  <ul>
+    <li><strong>Factorizar el numerador:</strong> El numerador ( x² - 4 ) es una diferencia de cuadrados, y se puede factorizar como:</li>
+  </ul>
+
+  <pre>x² - 4 = (x - 2)(x + 2)</pre>
+
+  <p>Entonces, la función se convierte en:</p>
+
+  <pre>f(x) = (x - 2)(x + 2) / (x - 2)</pre>
+
+  <ul>
+    <li><strong>Cancelar los factores comunes:</strong> Podemos cancelar el factor ( (x - 2) ) en el numerador y el denominador (siempre que ( x no es igual a 2 )): </li>
+  </ul>
+
+  <pre>f(x) = x + 2</pre>
+
+  <p><strong>Reemplazar el valor ( x = 2 ) en la expresión simplificada:</strong></p>
+
+  <pre>f(2) = 2 + 2 = 4</pre>
+
+  <p class="resultado"><strong>Resultado:</strong> El límite es 4.</p>
+
+  <pre>lim<sub>x→2</sub> (x² - 4) / (x - 2) = 4</pre></div>
+</div>
+
+  <h2>Ejemplo 2: Límite con una función racional más compleja</h2>
+
+  <div class="seccion">
+    <p>Vamos a calcular el siguiente límite:</p>
+    <pre>lim<sub>x→3</sub> (x² - 9) / (x - 3)</pre>
+
+
+  <div class="seccion"><h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = (x² - 9) / (x - 3)</code>, y queremos calcular el límite cuando ( x ) tiende a 3.</li>
+    <li><strong>Sustituir directamente el valor ( x = 3 ):</strong></li>
+  </ul>
+
+  <pre>f(3) = (3² - 9) / (3 - 3) = (9 - 9) / 0 = 0 / 0</pre>
+
+  <p>Esto también da una <strong>forma indeterminada</strong> \( \frac{0}{0} \), por lo que necesitamos factorizar.</p>
+
+  <ul>
+    <li><strong>Factorizar el numerador:</strong> El numerador ( x² - 9 ) es otra diferencia de cuadrados, y se puede factorizar como:</li>
+  </ul>
+
+  <pre>x² - 9 = (x - 3)(x + 3)</pre>
+
+  <p>Entonces, la función se convierte en:</p>
+
+  <pre>f(x) = (x - 3)(x + 3) / (x - 3)</pre>
+
+  <ul>
+    <li><strong>Cancelar los factores comunes:</strong> Podemos cancelar el factor ( (x - 3) ) en el numerador y el denominador (siempre que ( x no es igual a 3 )): </li>
+  </ul>
+
+  <pre>f(x) = x + 3</pre>
+
+  <p><strong>Reemplazar el valor ( x = 3 ) en la expresión simplificada:</strong></p>
+
+  <pre>f(3) = 3 + 3 = 6</pre>
+
+  <p class="resultado"><strong>Resultado:</strong> El límite es 6.</p>
+
+  <pre>lim<sub>x→3</sub> (x² - 9) / (x - 3) = 6</pre></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Cálculo de Límites</title>
+    <link rel="stylesheet" href="limites.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    
+    body {
+            font-family: "Sour Gummy", sans-serif;
+            margin: 20px;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:  #b4ceba;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a, .dropbtn {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover, .dropdown:hover .dropbtn {
+          background-color: rgb(153, 202, 199);
+        }
+        
+        li.dropdown {
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+</style>
+</head>
+<body>
+    <body>
+        <ul>
+            <li><a href="Limites.html">REGRESAR</a></li>
+            <li><a href="CONTACTO_JEIA.html">CONTACTO</a></li>
+            <li><a href="EJERCICIOS_DERIVALIMITES.html">EJERCICIOS</a></li>
+            </li>
+          </ul>
+    
+    <h1>Ejemplos de Cálculo de Límites</h1>
+
+    <br>  <div class="seccion">
+        Para entender qué son los límites, consideremos un ejemplo. Empezamos con la función 
+        \[f(x)=x+2\].
+      <center>  <img src="1.PNG"></center>
+    </body>
+    </div>
+
+    <div class="seccion">
+        <h2>Ejemplo 2: Límite Infinito</h2>
+        <p>Calculemos el límite de la función \( \frac{1}{x} \) cuando \( x \) se aproxima a 0:</p>
+        <pre><code>lim(x -> 0) 1/x</code></pre>
+
+        <p><strong>Paso 1: Análisis de los lados izquierdo y derecho.</strong> Consideramos el comportamiento de \( \frac{1}{x} \) cuando \( x \) se aproxima a 0 desde valores positivos y negativos.</p>
+        
+        <ul>
+            <li>Cuando \( x \) se aproxima a 0 desde la derecha (\( x \to 0^+ \)), los valores de \( \frac{1}{x} \) son positivos y crecen sin límite. Así que:</li>
+            <pre><code>lim(x -> 0^+) 1/x = ∞</code></pre>
+            
+            <li>Cuando \( x \) se aproxima a 0 desde la izquierda (\( x \to 0^- \)), los valores de \( \frac{1}{x} \) son negativos y decrecen sin límite. Así que:</li>
+            <pre><code>lim(x -> 0^-) 1/x = -∞</code></pre>
+        </ul>
+
+        <p><strong>Paso 2: Conclusión del límite.</strong> Como el límite depende de la dirección de aproximación, decimos que:</p>
+        <pre><code>lim(x -> 0) 1/x no existe</code></pre>
+        <p>Pero podemos decir que:</p>
+        <pre><code>lim(x -> 0^+) 1/x = ∞ y lim(x -> 0^-) 1/x = -∞</code></pre>
+    </div>
+
+    <div class="seccion">
+        <h2>Ejemplo 3: Límite Indeterminado (Regla de L'Hopital)</h2>
+        <p>Calculemos el límite de la siguiente función cuando \( x \) se aproxima a 0:</p>
+        <pre><code>lim(x -> 0) (sin(x)) / x</code></pre>
+
+        <p><strong>Paso 1: Sustitución directa.</strong> Intentamos sustituir \( x = 0 \) en la función:</p>
+        <pre><code>(sin(0)) / 0 = 0 / 0</code></pre>
+        <p>Esto da la forma indeterminada \( 0/0 \), por lo que aplicamos la regla de L'Hopital.</p>
+
+        <p><strong>Paso 2: Aplicar la regla de L'Hopital.</strong> Derivamos el numerador y el denominador:</p>
+        <pre><code>derivada de sin(x) = cos(x)</code></pre>
+        <pre><code>derivada de x = 1</code></pre>
+
+        <p><strong>Paso 3: Sustitución después de aplicar L'Hopital.</strong> Ahora sustituimos \( x = 0 \) en la nueva función:</p>
+        <pre><code>cos(0) / 1 = 1 / 1 = 1</code></pre>
+
+        <p><strong>Resultado:</strong> El límite es:</p>
+        <pre><code>lim(x -> 0) (sin(x)) / x = 1</code></pre>
+    </div>
+
+    <div class="seccion">
+        <h2>Ejemplo 4: Límite en Infinito</h2>
+        <p>Calculemos el límite de la siguiente función cuando \( x \) tiende a infinito:</p>
+        <pre><code>lim(x -> ∞) (3x^2 + 5x) / (x^2 - 2x)</code></pre>
+
+        <p><strong>Paso 1: Analizar el comportamiento a medida que \( x \) tiende a infinito.</strong> Observamos que tanto el numerador como el denominador son polinomios de grado 2. Nos enfocamos en los términos de mayor grado.</p>
+
+        <p><strong>Paso 2: Simplificación.</strong> Dividimos el numerador y el denominador por \( x^2 \):</p>
+        <pre><code>(3x^2 + 5x) / (x^2 - 2x) = (3 + 5/x) / (1 - 2/x)</code></pre>
+
+        <p><strong>Paso 3: Evaluación en infinito.</strong> Cuando \( x \) tiende a infinito, los términos \( 5/x \) y \( 2/x \) tienden a 0, por lo que la expresión se simplifica a:</p>
+        <pre><code>3 / 1 = 3</code></pre>
+
+        <p><strong>Resultado:</strong> El límite es:</p>
+        <pre><code>lim(x -> ∞) (3x^2 + 5x) / (x^2 - 2x) = 3</code></pre>
+    </div>
+
+
+</body>
+</html>
+

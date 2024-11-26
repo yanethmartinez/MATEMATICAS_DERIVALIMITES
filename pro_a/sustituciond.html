@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustitución directa para calcular un límite</title>
+  <link rel="stylesheet" href="limites.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <ul class="si">
+            <li><button onclick="window.location.href='Limites.html'">Regresar</button></li>
+            <li><h1>Sustitución Directa para Calcular un Límite</h1></li>
+        </ul>
+        </header>
+
+  <div class="seccion1"><p>La <strong>sustitución directa</strong> es un método utilizado para calcular límites en cálculo, especialmente útil cuando la función es continua en el punto al cual estamos acercándonos. Consiste en simplemente sustituir el valor al cual la variable se acerca (el valor del límite) en la expresión de la función y verificar si obtenemos un valor determinado.</p>
+</div>
+<div class="seccion"><h2>Pasos para usar la sustitución directa:</h2>
+  <ul>
+    <li><strong>Identificar el límite:</strong> Se te da una función <em>f(x)</em> y un valor al que <em>x</em> tiende, es decir, un límite <code>lim<sub>x→c</sub> f(x)</code>.</li>
+    <li><strong>Sustituir el valor <em>c</em> en la función <em>f(x)</em>:</strong> Reemplaza <em>x</em> por el valor al que tiende <em>x</em> en la función.</li>
+    <li><strong>Comprobar el resultado:</strong>
+      <ul>
+        <li>Si al sustituir el valor de <em>x</em> en <em>f(x)</em> obtenemos un valor real definido, ese es el valor del límite.</li>
+        <li>Si la sustitución resulta en una forma indeterminada (como <code>0/0</code>, <code>∞−∞</code>, <code>∞/∞</code>, etc.), entonces no se puede calcular el límite por sustitución directa y se debe usar otro método, como factorización, racionalización o la regla de L'Hopital.</li>
+      </ul>
+    </li>
+  </ul></div>
+
+  <h2>Ejemplo 1: Calcular un límite usando sustitución directa</h2>
+
+  <div class="seccion">
+    <p>Supongamos que tenemos la siguiente función:</p>
+    <pre>f(x) = 2x + 3</pre>
+    <p>Queremos calcular:</p>
+    <pre>lim<sub>x→4</sub> (2x + 3)</pre>
+  
+<div class="seccion">
+  <h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = 2x + 3</code> y estamos buscando el límite cuando <em>x</em> tiende a 4.</li>
+    <li><strong>Sustituir directamente el valor de <em>x = 4</em>:</strong></li>
+  </ul>
+
+  <pre>f(4) = 2(4) + 3 = 8 + 3 = 11</pre>
+
+  <p class="resultado">Resultado: El límite es 11.</p>
+  <pre>lim<sub>x→4</sub> (2x + 3) = 11</pre>
+</div></div>
+  <h2>Ejemplo 2: Límite con una función racional</h2>
+
+  <div class="seccion">
+    <p>Considera la siguiente función:</p>
+    <pre>f(x) = (x² - 4) / (x - 2)</pre>
+    <p>Queremos calcular:</p>
+    <pre>lim<sub>x→2</sub> (x² - 4) / (x - 2)</pre>
+  
+
+<div class="seccion">
+  <h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = (x² - 4) / (x - 2)</code> y estamos buscando el límite cuando <em>x</em> tiende a 2.</li>
+    <li><strong>Intentar la sustitución directa:</strong> Si sustituimos <em>x = 2</em> en la función:</li>
+  </ul>
+
+  <pre>f(2) = (2² - 4) / (2 - 2) = (4 - 4) / 0 = 0 / 0</pre>
+
+  <p>Este es una forma indeterminada <code>0/0</code>, por lo que no podemos calcular el límite por sustitución directa en este caso. Necesitamos simplificar la expresión antes de calcular el límite.</p>
+
+  <ul>
+    <li><strong>Factorizamos el numerador:</strong></li>
+  </ul>
+
+  <pre>x² - 4 = (x - 2)(x + 2)</pre>
+
+  <p>Ahora la función se convierte en:</p>
+
+  <pre>f(x) = (x - 2)(x + 2) / (x - 2)</pre>
+
+  <p>Podemos cancelar <code>(x - 2)</code> en el numerador y el denominador (siempre que <em>x ≠ 2</em>):</p>
+
+  <pre>f(x) = x + 2</pre>
+
+  <p>Ahora podemos calcular el límite sustituyendo directamente <em>x = 2</em>:</p>
+
+  <pre>lim<sub>x→2</sub> (x + 2) = 2 + 2 = 4</pre>
+
+
+  <p class="resultado">Resultado: El límite es 4.</p>
+  <pre>lim<sub>x→2</sub> (x² - 4) / (x - 2) = 4</pre>
+</div>
+</body>
+</html>

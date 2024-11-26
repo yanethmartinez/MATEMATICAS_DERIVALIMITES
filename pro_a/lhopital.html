@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reglas de L'Hopital en Límites</title>
+  <link rel="stylesheet" href="limites.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <ul class="si">
+        <li><button onclick="window.location.href='Limites.html'">Regresar</button></li>
+        <li><h1>Reglas de L'Hopital en Límites</h1></li>
+    </ul>
+  </header>
+
+  <div class="seccion">
+    <p>Las <strong>Reglas de L'Hopital</strong> son una herramienta poderosa para calcular límites que resultan en formas indeterminadas como \( \frac{0}{0} \) o \( \frac{\infty}{\infty} \). Estas reglas nos permiten derivar el numerador y el denominador de la expresión por separado y luego recalcular el límite con la nueva expresión.</p>
+    <p>Si se obtiene una forma indeterminada al intentar calcular el límite, se puede aplicar la regla de L'Hopital de manera iterativa hasta obtener un resultado determinado.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>Pasos para usar la Regla de L'Hopital:</h2>
+    <ul>
+      <li><strong>Identificar el límite:</strong> Se te da una función racional y un valor al cual (x) tiende, es decir, un límite lim<sub>x→c</sub> f(x).</li>
+      <li><strong>Sustituir el valor de (x):</strong> Intentamos sustituir directamente el valor (x = c) en la expresión de la función.</li>
+      <ul>
+        <li>Si obtenemos una forma indeterminada como 0/0 o ∞/∞, podemos aplicar la Regla de L'Hopital.</li>
+      </ul>
+      <li><strong>Aplicar la regla de L'Hopital:</strong> Derivamos el numerador y el denominador de la expresión por separado.</li>
+      <li><strong>Recalcular el límite:</strong> Sustituimos el valor (x = c) en la nueva expresión después de derivar.</li>
+      <li><strong>Iterar si es necesario:</strong> Si después de aplicar la regla de L'Hopital aún obtenemos una forma indeterminada, aplicamos la regla nuevamente hasta obtener un resultado.</li>
+    </ul>
+  </div>
+
+  <h2>Ejemplo 1: Límite con una forma indeterminada \( \frac{0}{0} \)</h2>
+
+  <div class="seccion">
+    <p>Vamos a calcular el siguiente límite:</p>
+    <pre>lim<sub>x→0</sub> (sin(x)) / x</pre>
+
+  <div class="seccion"><h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = sin(x) / x</code>, y queremos calcular el límite cuando (x) tiende a 0.</li>
+    <li><strong>Sustituir directamente el valor (x = 0):</strong></li>
+  </ul>
+
+  <pre>f(0) = sin(0) / 0 = 0 / 0</pre>
+
+  <p>Esto da una <strong>forma indeterminada</strong> 0/0, por lo que podemos aplicar la Regla de L'Hopital.</p>
+
+  <ul>
+    <li><strong>Aplicar la regla de L'Hopital:</strong> Derivamos el numerador y el denominador:</li>
+  </ul>
+
+  <pre>f'(x) = cos(x) / 1</pre>
+
+  <ul>
+    <li><strong>Recalcular el límite:</strong> Ahora sustituimos (x = 0) en la expresión derivada:</li>
+  </ul>
+
+  <pre>f'(0) = cos(0) / 1 = 1 / 1 = 1</pre>
+
+  <p class="resultado"><strong>Resultado:</strong> El límite es 1.</p>
+
+  <pre>lim<sub>x→0</sub> (sin(x)) / x = 1</pre>
+  </div>
+</div>
+
+  <h2>Ejemplo 2: Límite con una forma indeterminada \( \frac{\infty}{\infty} \)</h2>
+
+  <div class="seccion">
+    <p>Vamos a calcular el siguiente límite:</p>
+    <pre>lim<sub>x→∞</sub> (2x) / (x² + 1)</pre>
+
+  <div class="seccion"><h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = (2x) / (x² + 1)</code>, y queremos calcular el límite cuando (x) tiende a infinito.</li>
+    <li><strong>Sustituir directamente el valor (x = ∞):</strong></li>
+  </ul>
+
+  <pre>f(∞) = 2∞ / (∞² + 1) = ∞ / ∞</pre>
+
+  <p>Esto da una <strong>forma indeterminada</strong> ∞/∞, por lo que podemos aplicar la Regla de L'Hopital.</p>
+
+  <ul>
+    <li><strong>Aplicar la regla de L'Hopital:</strong> Derivamos el numerador y el denominador:</li>
+  </ul>
+
+  <pre>f'(x) = 2 / (2x)</pre>
+
+  <ul>
+    <li><strong>Recalcular el límite:</strong> Ahora sustituimos (x = ∞) en la expresión derivada:</li>
+  </ul>
+
+  <pre>f'(∞) = 2 / (2∞) = 2 / ∞ = 0</pre>
+
+  <p class="resultado"><strong>Resultado:</strong> El límite es 0.</p>
+
+  <pre>lim<sub>x→∞</sub> (2x) / (x² + 1) = 0</pre>
+  </div>
+</div>
+</body>
+</html>

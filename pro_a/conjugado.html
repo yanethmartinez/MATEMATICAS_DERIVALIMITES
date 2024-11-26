@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplicación por el Conjugado en Límites</title>
+  <link rel="stylesheet" href="limites.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <ul class="si">
+        <li><button onclick="window.location.href='Limites.html'">Regresar</button></li>
+        <li><h1>Multiplicación por el Conjugado en Límites</h1></li>
+    </ul>
+  </header>
+
+  <div class="seccion">
+    <p>La técnica de <strong>multiplicación por el conjugado</strong> es muy útil cuando estamos trabajando con límites que involucran raíces cuadradas. Este método permite simplificar la expresión y eliminar la indeterminación. La idea consiste en multiplicar y dividir por el conjugado de una expresión para simplificar las raíces y poder calcular el límite.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>Pasos para usar la multiplicación por el conjugado:</h2>
+    <ul>
+      <li><strong>Identificar el límite:</strong> Se te da una función que involucra una raíz cuadrada, y un valor al cual (x) tiende, es decir, un límite lim<sub>x→c</sub> f(x).</li>
+      <li><strong>Sustituir el valor de (x):</strong> Intentamos sustituir directamente el valor (x = c) en la expresión de la función.</li>
+      <ul>
+        <li>Si obtenemos una forma indeterminada como 0/0 o √a - √b = 0, entonces necesitamos multiplicar por el conjugado.</li>
+      </ul>
+      <li><strong>Multiplicar y dividir por el conjugado:</strong> Multiplicamos y dividimos la expresión por el conjugado de la parte que tiene la raíz cuadrada.</li>
+      <li><strong>Simplificar la expresión:</strong> Realizamos las simplificaciones necesarias y, si es posible, cancelamos factores comunes.</li>
+      <li><strong>Reemplazar el valor de (x) en la nueva expresión simplificada:</strong> Ahora sustituimos el valor de (x = c) nuevamente para obtener el límite.</li>
+    </ul>
+  </div>
+
+  <h2>Ejemplo 1: Límite con raíz cuadrada</h2>
+
+  <div class="seccion">
+    <p>Vamos a calcular el siguiente límite:</p>
+    <pre>lim<sub>x→4</sub> (√x - 2) / (x - 4)</pre>
+
+  <div class="seccion"><h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = (√x - 2) / (x - 4)</code>, y queremos calcular el límite cuando (x) tiende a 4.</li>
+    <li><strong>Sustituir directamente el valor (x = 4):</strong></li>
+  </ul>
+
+  <pre>f(4) = (√4 - 2) / (4 - 4) = (2 - 2) / 0 = 0 / 0</pre>
+
+  <p>Esto da una <strong>forma indeterminada</strong> 0/0, por lo que necesitamos multiplicar por el conjugado.</p>
+
+  <ul>
+    <li><strong>Multiplicar y dividir por el conjugado:</strong> El conjugado de (√x - 2) es (√x + 2). Entonces, multiplicamos y dividimos la función por (√x + 2):</li>
+  </ul>
+
+  <pre>f(x) = ((√x - 2)(√x + 2)) / ((x - 4)(√x + 2))</pre>
+
+  <ul>
+    <li><strong>Simplificar la expresión:</strong> Usamos la identidad de diferencia de cuadrados (a - b)(a + b) = a² - b² para simplificar el numerador:</li>
+  </ul>
+
+  <pre>f(x) = (x - 4) / ((x - 4)(√x + 2))</pre>
+
+  <ul>
+    <li><strong>Cancelar factores comunes:</strong> Podemos cancelar el factor (x - 4) en el numerador y el denominador (siempre que x ≠ 4):</li>
+  </ul>
+
+  <pre>f(x) = 1 / (√x + 2)</pre>
+
+  <p><strong>Reemplazar el valor (x = 4) en la expresión simplificada:</strong></p>
+
+  <pre>f(4) = 1 / (√4 + 2) = 1 / (2 + 2) = 1 / 4</pre>
+
+  <p class="resultado"><strong>Resultado:</strong> El límite es 1/4.</p>
+
+  <pre>lim<sub>x→4</sub> (√x - 2) / (x - 4) = 1/4</pre>
+  </div>
+</div>
+
+  <h2>Ejemplo 2: Límite con raíz cuadrada en el numerador y denominador</h2>
+
+  <div class="seccion">
+    <p>Vamos a calcular el siguiente límite:</p>
+    <pre>lim<sub>x→9</sub> (√x - 3) / (√x - 3)</pre>
+
+  <div class="seccion"><h3>Solución:</h3>
+  <ul>
+    <li><strong>Identificar el límite:</strong> La función es <code>f(x) = (√x - 3) / (√x - 3)</code>, y queremos calcular el límite cuando (x) tiende a 9.</li>
+    <li><strong>Sustituir directamente el valor (x = 9):</strong></li>
+  </ul>
+
+  <pre>f(9) = (√9 - 3) / (√9 - 3) = (3 - 3) / (3 - 3) = 0 / 0</pre>
+
+  <p>Esto da una <strong>forma indeterminada</strong> 0/0, por lo que necesitamos multiplicar por el conjugado.</p>
+
+  <ul>
+    <li><strong>Multiplicar y dividir por el conjugado:</strong> El conjugado de (√x - 3) es (√x + 3). Entonces, multiplicamos y dividimos la función por (√x + 3):</li>
+  </ul>
+
+  <pre>f(x) = ((√x - 3)(√x + 3)) / ((√x - 3)(√x + 3))</pre>
+
+  <ul>
+    <li><strong>Simplificar la expresión:</strong> Usamos la identidad de diferencia de cuadrados (a - b)(a + b) = a² - b² para simplificar el numerador:</li>
+  </ul>
+
+  <pre>f(x) = (x - 9) / ((√x - 3)(√x + 3))</pre>
+
+  <ul>
+    <li><strong>Cancelar factores comunes:</strong> Podemos cancelar el factor (√x - 3) en el numerador y el denominador (siempre que x ≠ 9):</li>
+  </ul>
+
+  <pre>f(x) = 1 / (√x + 3)</pre>
+
+  <p><strong>Reemplazar el valor (x = 9) en la expresión simplificada:</strong></p>
+
+  <pre>f(9) = 1 / (√9 + 3) = 1 / (3 + 3) = 1 / 6</pre>
+
+  <p class="resultado"><strong>Resultado:</strong> El límite es 1/6.</p>
+
+  <pre>lim<sub>x→9</sub> (√x - 3) / (√x - 3) = 1/6</pre>
+  </div>
+</div>
+</body>
+</html>

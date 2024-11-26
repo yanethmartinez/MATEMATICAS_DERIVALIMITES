@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Límites</title>
+    <link rel="stylesheet" href="limites.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+      body{
+  box-sizing:border-box;
+  font-family:"Lato",Sans-serif;
+/*   position:relative; */
+}
+
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+}
+
+.btn:link,
+.btn:visited{
+  text-decoration: none;
+  text-transform:uppercase;
+  position:relative;
+  top:0;
+  left:0;
+  padding:10px 20px;
+  border-radius:100px;
+  display:inline-block;
+  transition: all .5s;
+  font-size: 14px;
+}
+
+.btn-white{
+  background:#fab06f;
+  color:#000;
+}
+
+.btn:hover{
+   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+   transform : translateY(-3px);
+}
+
+.btn:active{
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2)
+  
+}
+
+.btn-bottom-animation-1{
+  animation:comeFromBottom 1s ease-out .8s;
+}
+
+.btn::after{
+  content:"";
+  text-decoration: none;
+  text-transform:uppercase;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border-radius:100px;
+  display:inline-block;
+  z-index:-1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+    background: #fff;
+}
+
+.btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes comeFromBottom{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  } 
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+    </style>
+</head>
+<body> 
+    <header>
+        <ul class="si">
+            <li><img src="JEIA.png" width="100" height="100"></li>
+            <li><button onclick="window.location.href='derivadas.html'">Inicio</button></li>
+            <li><h1>ACTIVIDADES/JUEGOS</h1></li>
+        </ul>
+        </header>
+    <div class="seccion">
+        <b>Con base en lo aprendido hasta ahora, tienes la oportunidad de realizar una serie de juegos interactivos relacionados con derivadas y límites. Estos juegos están diseñados para ayudarte a mejorar tu comprensión y habilidades de una manera divertida, dinámica y educativa. A través de actividades prácticas y ejercicios retadores, podrás aplicar los conceptos aprendidos de<br> forma didáctica y sencilla. <br>
+        <br>
+        Estos juegos no solo te permitirán repasar lo que has aprendido, sino que también te ayudarán a fortalecer tus conocimientos de cálculo, mejorando tu capacidad para resolver problemas y comprendiendo de manera más profunda las derivadas y los límites.</b>
+        </div>
+        <div class="box"></div>
+        <div class="seccion">
+          <h2>1.-Juego de Derivadas y Limites</h2>
+          En este juego, te harán 10 preguntas que se vuelven más difíciles, con el objetivo de verificar cuánto has aprendido.
+          <a href="aprendizaje_DERIVALIMITES.html" class="btn btn-white btn-animation-1">Inicio</a> 
+        </div>
+      </div>
+      <div class="box"></div>
+      <div class="seccion">
+        <h2>2.-Ruleta de Derivadas</h2>
+        <a href="s.html" class="btn btn-white btn-animation-1">Inicio</a> 
+      </div>
+</div>
+</body>
+</html>
